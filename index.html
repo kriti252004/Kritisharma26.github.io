@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kriti Sharma | Full Stack Java Developer</title>
+  <meta name="description" content="Portfolio of Kriti Sharma - Full Stack Java Developer specializing in Spring Boot, REST APIs, Microservices, and Scalable Backend Systems.">
+  <meta name="keywords" content="Kriti Sharma, Full Stack Java Developer, Spring Boot, Java, MySQL, Hibernate, Software Engineer, Bengaluru">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['Fira Code', 'JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 bg-grid-pattern min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center space-x-2 group">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-emerald-400 flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
+          &lt;KS/&gt;
+        </span>
+        <div class="flex flex-col">
+          <span class="font-bold text-slate-100 tracking-tight text-base group-hover:text-blue-400 transition-colors">
+            Kriti Sharma
+          </span>
+          <span class="text-xs text-slate-400 font-mono">Java Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-6 text-sm font-medium text-slate-300">
+        <a href="#about" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">About</a>
+        <a href="#skills" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Skills</a>
+        <a href="#experience" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Experience</a>
+        <a href="#projects" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Projects</a>
+        <a href="#education" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Education</a>
+        <a href="#contact" class="nav-link hover:text-blue-400 transition-colors px-3 py-2 rounded-lg">Contact</a>
+      </nav>
+
+      <!-- Action Buttons & Theme Switcher -->
+      <div class="flex items-center space-x-3">
+        <!-- Resume Link -->
+        <a href="resume.html" target="_blank" class="hidden sm:inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+          <i data-lucide="file-text" class="w-4 h-4"></i>
+          <span>View Resume</span>
+        </a>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" aria-label="Toggle Dark/Light Mode" class="p-2 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors border border-slate-700/50">
+          <span id="theme-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden glass-panel border-t border-slate-800 px-6 py-4 space-y-3">
+      <a href="#about" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">About</a>
+      <a href="#skills" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">Skills</a>
+      <a href="#experience" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">Experience</a>
+      <a href="#projects" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">Projects</a>
+      <a href="#education" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">Education & Certifications</a>
+      <a href="#contact" class="mobile-nav-link block py-2 text-slate-200 hover:text-blue-400">Contact</a>
+      <div class="pt-2 border-t border-slate-800 flex items-center justify-between">
+        <a href="resume.html" target="_blank" class="inline-flex items-center space-x-2 text-sm text-blue-400 font-medium">
+          <i data-lucide="file-text" class="w-4 h-4"></i>
+          <span>View Resume (PDF View)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="pt-20">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="relative overflow-hidden pt-12 pb-20 md:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Glow ambient background -->
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 md:w-[600px] h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+      <div class="absolute top-1/2 right-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        
+        <!-- Left Column: Headline & Intro -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Pill -->
+          <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span>Software Developer @ UBQ Technology | Open to Opportunities</span>
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Hi, I'm <span class="text-gradient">Kriti Sharma</span>
+            <br>
+            <span class="text-slate-200 text-2xl sm:text-3xl lg:text-4xl font-semibold">
+              Full Stack Java Developer
+            </span>
+          </h1>
+
+          <!-- Summary / Tagline -->
+          <p class="text-slate-400 text-base sm:text-lg max-w-2xl leading-relaxed">
+            Hands-on software developer experienced across the entire SDLC — from designing 
+            high-throughput <span class="text-blue-400 font-medium">REST APIs</span> and scalable 
+            <span class="text-emerald-400 font-medium">data models</span> to debugging critical 
+            production issues on live healthcare applications.
+          </p>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-all shadow-lg shadow-blue-600/30 flex items-center space-x-2 group">
+              <span>Explore My Work</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="resume.html" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-sm transition-all flex items-center space-x-2">
+              <i data-lucide="download" class="w-4 h-4 text-emerald-400"></i>
+              <span>Download Resume</span>
+            </a>
+            <a href="#contact" class="px-6 py-3 rounded-xl bg-transparent hover:bg-slate-800/50 text-slate-300 font-medium text-sm transition-all border border-slate-700/60">
+              Get in Touch
+            </a>
+          </div>
+
+          <!-- Quick Social & Info Links -->
+          <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-400">
+            <a href="https://github.com/Kritisharma26" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 hover:text-white transition-colors">
+              <i data-lucide="github" class="w-4 h-4 text-blue-400"></i>
+              <span class="font-mono">github.com/Kritisharma26</span>
+            </a>
+            <a href="mailto:kritisharma25704@gmail.com" class="flex items-center space-x-2 hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+              <span>kritisharma25704@gmail.com</span>
+            </a>
+            <div class="flex items-center space-x-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-purple-400"></i>
+              <span>Bengaluru, India</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Code Terminal Simulator -->
+        <div class="lg:col-span-5">
+          <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-700/60 bg-slate-900/90 hover-lift">
+            
+            <!-- Terminal Header & Tabs -->
+            <div class="bg-slate-950/80 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+              <!-- Window dots -->
+              <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                <span id="code-file-name" class="ml-2 font-mono text-xs text-slate-400">BillingServiceImpl.java</span>
+              </div>
+              <span class="text-[11px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Java 17 / Spring</span>
+            </div>
+
+            <!-- Code Tabs -->
+            <div class="flex border-b border-slate-800 text-xs font-mono bg-slate-950/40 overflow-x-auto">
+              <button class="code-tab-btn px-4 py-2 bg-slate-700/80 text-blue-400 border-b-2 border-blue-500 transition-colors whitespace-nowrap" data-snippet="billing" data-filename="BillingServiceImpl.java">
+                BillingService.java
+              </button>
+              <button class="code-tab-btn px-4 py-2 text-slate-400 hover:text-slate-200 transition-colors whitespace-nowrap" data-snippet="inventory" data-filename="InventoryController.java">
+                InventoryController.java
+              </button>
+              <button class="code-tab-btn px-4 py-2 text-slate-400 hover:text-slate-200 transition-colors whitespace-nowrap" data-snippet="dao" data-filename="EmployeeDAOImpl.java">
+                EmployeeDAO.java
+              </button>
+            </div>
+
+            <!-- Code Content Area -->
+            <div class="p-4 sm:p-5 overflow-x-auto max-h-[380px] text-xs font-mono text-slate-300 leading-relaxed">
+              <pre><code id="code-display" class="language-java">// UBQ Technology - Medics Healthcare System
+@Service
+@Transactional
+public class BillingServiceImpl implements BillingService {
+
+    private final BillingRepository billingRepo;
+    private final InvoiceDataModelMapper mapper;
+
+    @Autowired
+    public BillingServiceImpl(BillingRepository repo, InvoiceDataModelMapper mapper) {
+        this.billingRepo = repo;
+        this.mapper = mapper;
+    }
+
+    @Override
+    public InvoiceDTO processPatientBill(Long patientId, BillRequestDTO request) {
+        // High-precision healthcare billing & audit logging
+        PatientDataModel patient = billingRepo.findPatientById(patientId)
+            .orElseThrow(() -> new ResourceNotFoundException("Patient not found: " + patientId));
+
+        BigDecimal total = request.getItems().stream()
+            .map(ItemDTO::getAmount)
+            .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+        InvoiceEntity invoice = mapper.toEntity(request, total, patient);
+        return mapper.toDto(billingRepo.save(invoice));
+    }
+}</code></pre>
+            </div>
+
+            <!-- Terminal Footer Status -->
+            <div class="px-4 py-2.5 bg-slate-950/80 border-t border-slate-800 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+              <span class="flex items-center space-x-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Production Medics Backend • Maven Build: SUCCESS</span>
+              </span>
+              <span class="text-slate-500">UTF-8</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center hover-lift">
+          <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 font-mono">8.03</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">B.Tech CGPA (CSE)</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center hover-lift">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono">UBQ Tech</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Medics Healthcare Dev</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center hover-lift">
+          <div class="text-2xl sm:text-3xl font-extrabold text-purple-400 font-mono">5+</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Certifications (NPTEL/Udemy)</div>
+        </div>
+        <div class="glass-panel p-5 rounded-xl border border-slate-800 text-center hover-lift">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">Full SDLC</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-medium">Design to Production Support</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section id="about" class="py-20 bg-slate-900/40 border-y border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Background & Philosophy</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Architecting Resilient Backend Systems</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <div class="lg:col-span-6 space-y-5 text-slate-300 leading-relaxed text-sm sm:text-base">
+            <p>
+              I am a <strong class="text-white font-semibold">Full Stack Java Developer</strong> with hands-on experience spanning the entire Software Development Life Cycle (SDLC). Currently working at <strong class="text-white font-semibold">UBQ Technology Pvt Ltd</strong> in Bengaluru, I contribute to <em class="text-blue-300 not-italic">Medics</em>, a live healthcare platform, engineering scalable billing services, precision data models, and diagnosing real-world production defects.
+            </p>
+            <p>
+              My technical expertise is rooted in a deep understanding of <span class="text-emerald-400 font-medium">Java, Spring Boot, J2EE, Hibernate, and MySQL</span>. I emphasize architectural discipline through proven Object-Oriented design patterns like <span class="text-purple-400 font-mono text-xs px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">DAO</span> and <span class="text-purple-400 font-mono text-xs px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">DTO</span>, ensuring maintainable, modular, and performant codebases.
+            </p>
+            <p>
+              In addition to enterprise backend development, I have built interactive web frontends using HTML5, CSS3, JavaScript, and React, and successfully managed and delivered independent client software solutions from requirements gathering to testing and deployment.
+            </p>
+
+            <div class="pt-4 grid grid-cols-2 gap-4">
+              <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-800">
+                <div class="font-bold text-white text-base">Backend First</div>
+                <div class="text-xs text-slate-400 mt-1">REST APIs, transactions, concurrency, schema modeling</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-800">
+                <div class="font-bold text-white text-base">Production Ready</div>
+                <div class="text-xs text-slate-400 mt-1">Live debugging, troubleshooting, cross-team release coordination</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards Grid -->
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+              <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-4 border border-blue-500/20">
+                <i data-lucide="server" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">RESTful API Design</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Designing standardized, secure REST APIs with Spring Boot, structured error handling, DTO transfers, and clean controller-service-repo layers.
+              </p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/20">
+                <i data-lucide="database" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Data Modeling & MySQL</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Structuring complex transactional databases, normalization, Hibernate ORM mapping, and billing domain data models for scalability.
+              </p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 border border-purple-500/20">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Production Support</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Investigating live production bottlenecks, diagnosing exceptions, resolving critical bugs, and ensuring smooth release stability.
+              </p>
+            </div>
+
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4 border border-amber-500/20">
+                <i data-lucide="layers" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-base font-bold text-white mb-2">Design Patterns</h3>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Extensive application of Object-Oriented principles, DAO/DTO patterns, separation of concerns, and clean architectural design.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== TECHNICAL SKILLS SECTION ==================== -->
+    <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase">Core Competencies</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Technical Skill Matrix</h2>
+        <p class="text-slate-400 text-sm mt-2">Core toolsets and enterprise technologies utilized across projects and production roles</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Category 1: Languages -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center border border-blue-500/20">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Languages</h3>
+              <p class="text-xs text-slate-400">Programming & Querying</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 flex items-center space-x-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+              <span>Java (Core & Advanced)</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">SQL</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">JavaScript</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">HTML5</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">CSS3</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Core Spring</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Frameworks & Web -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Frameworks & Technologies</h3>
+              <p class="text-xs text-slate-400">Backend & Modern Frontend</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 flex items-center space-x-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              <span>Spring Boot</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Hibernate ORM</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">REST API</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">J2EE</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">React</span>
+          </div>
+        </div>
+
+        <!-- Category 3: Databases -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center border border-purple-500/20">
+              <i data-lucide="database" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Databases & Storage</h3>
+              <p class="text-xs text-slate-400">Relational & Persistence</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 flex items-center space-x-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+              <span>MySQL</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Relational Modeling</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Schema Design</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Query Optimization</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Core Concepts & Architecture -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
+              <i data-lucide="git-branch" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Core Concepts</h3>
+              <p class="text-xs text-slate-400">Software Engineering Foundations</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20">OOP Principles</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Data Structures & Algorithms</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Data Modelling</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">DAO Pattern</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">DTO Pattern</span>
+          </div>
+        </div>
+
+        <!-- Category 5: Tools & Development -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/20">
+              <i data-lucide="wrench" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Tools & Editors</h3>
+              <p class="text-xs text-slate-400">Workflows & Productivity</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">VS Code</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Eclipse IDE</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Postman</span>
+          </div>
+        </div>
+
+        <!-- Category 6: SDLC & Soft Skills -->
+        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+          <div class="flex items-center space-x-3 mb-5">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center border border-rose-500/20">
+              <i data-lucide="users" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-base">Practices & Delivery</h3>
+              <p class="text-xs text-slate-400">Collaboration & Management</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Full SDLC Execution</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Production Support & Debugging</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-800 text-slate-200 border border-slate-700">Client Requirements Engineering</span>
+            <span class="px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-500/10 text-rose-300 border border-rose-500/20">Cross-functional Collaboration</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== WORK EXPERIENCE SECTION ==================== -->
+    <section id="experience" class="py-20 bg-slate-900/40 border-y border-slate-800/80">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Career Timeline</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Work Experience</h2>
+          <p class="text-slate-400 text-sm mt-2">Professional industry roles and full stack development training</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="relative timeline-line space-y-12">
+          
+          <!-- Experience Item 1: UBQ Technology -->
+          <div class="relative pl-10 md:pl-12 group">
+            <!-- Timeline dot -->
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-blue-500 flex items-center justify-center group-hover:scale-125 transition-transform">
+              <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+            </div>
+
+            <!-- Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover-lift">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <span>Software Developer</span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Current</span>
+                  </h3>
+                  <div class="text-sm font-medium text-blue-400">UBQ Technology Pvt Ltd</div>
+                </div>
+                <div class="flex flex-col sm:items-end text-xs text-slate-400 font-mono">
+                  <span>Jul 2026 – Present</span>
+                  <span class="text-slate-400 flex items-center gap-1 mt-0.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Bengaluru, KA
+                  </span>
+                </div>
+              </div>
+
+              <div class="space-y-3 text-sm text-slate-300">
+                <div class="flex items-start space-x-3">
+                  <span class="text-blue-400 mt-1">▸</span>
+                  <span>Working on <strong class="text-white">Medics</strong>, a high-stakes enterprise healthcare application, contributing directly to backend feature engineering, enhancements, and micro-component delivery.</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-blue-400 mt-1">▸</span>
+                  <span>Active member of the <strong class="text-white">Billing Team</strong>; performed in-depth data modelling to design, normalize, and structure complex billing-related data for high financial accuracy, integrity, and scalability.</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-blue-400 mt-1">▸</span>
+                  <span>Provided dedicated <strong class="text-white">production support</strong> by investigating root causes, troubleshooting system anomalies, and resolving critical bugs across the live application.</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-blue-400 mt-1">▸</span>
+                  <span>Collaborated closely with cross-functional product, QA, and deployment teams to guarantee timely releases, zero regression, and system stability.</span>
+                </div>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs">
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-blue-300 font-mono">Java</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 font-mono">Healthcare Tech</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-purple-300 font-mono">Data Modelling</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 font-mono">Billing Engines</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">Production Support</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Item 2: Dhee Coding Labs -->
+          <div class="relative pl-10 md:pl-12 group">
+            <!-- Timeline dot -->
+            <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-slate-900 border-2 border-emerald-500 flex items-center justify-center group-hover:scale-125 transition-transform">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            </div>
+
+            <!-- Card -->
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 hover-lift">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-800/80 pb-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-white">Java Full Stack Developer Trainee</h3>
+                  <div class="text-sm font-medium text-emerald-400">Dhee Coding Labs</div>
+                </div>
+                <div class="flex flex-col sm:items-end text-xs text-slate-400 font-mono">
+                  <span>Jan 2025 – Jun 2026</span>
+                  <span class="text-slate-400 flex items-center gap-1 mt-0.5">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Bengaluru, KA
+                  </span>
+                </div>
+              </div>
+
+              <div class="space-y-3 text-sm text-slate-300">
+                <div class="flex items-start space-x-3">
+                  <span class="text-emerald-400 mt-1">▸</span>
+                  <span>Underwent intensive professional immersion in <strong class="text-white">Java Full Stack development</strong>, mastering core Java principles, Spring Boot, Hibernate ORM, and MySQL database management.</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-emerald-400 mt-1">▸</span>
+                  <span>Built clean, user-friendly frontend interfaces using <strong class="text-white">HTML5, CSS3, and JavaScript</strong>, integrating them seamlessly with Spring Boot REST backends.</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <span class="text-emerald-400 mt-1">▸</span>
+                  <span>Managed complex codebase branches, pull requests, and multi-developer collaborative repositories using <strong class="text-white">Git and GitHub</strong>.</span>
+                </div>
+              </div>
+
+              <!-- Tech Badges -->
+              <div class="mt-6 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2 text-xs">
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-blue-300 font-mono">Java</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-emerald-300 font-mono">Spring Boot</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-purple-300 font-mono">Hibernate</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-amber-300 font-mono">MySQL</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-cyan-300 font-mono">JavaScript / UI</span>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-mono">Git & GitHub</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section id="projects" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-mono font-bold tracking-widest text-purple-400 uppercase">Portfolio Showcase</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Featured Projects</h2>
+        <p class="text-slate-400 text-sm mt-2">Production-grade applications, enterprise frameworks, and client deliverables</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Project Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white shadow-md transition-all" data-filter="all">
+          All Projects
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/60 text-slate-300 hover:text-white transition-all" data-filter="springboot">
+          Spring Boot & REST
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/60 text-slate-300 hover:text-white transition-all" data-filter="j2ee">
+          J2EE & DAO Pattern
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800/60 text-slate-300 hover:text-white transition-all" data-filter="freelance">
+          Freelance / Client
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project 1: Smart Inventory Management System -->
+        <div class="project-card flex flex-col justify-between glass-panel rounded-2xl border border-slate-800 overflow-hidden hover-lift" data-category="all springboot fullstack">
+          <div>
+            <!-- Banner / Header -->
+            <div class="p-6 bg-gradient-to-br from-blue-900/30 to-slate-900 border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                  Full Stack Java
+                </span>
+                <span class="text-xs text-slate-400 flex items-center space-x-1 font-mono">
+                  <i data-lucide="bell" class="w-3.5 h-3.5 text-emerald-400"></i>
+                  <span>Live Alerts</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                Smart Inventory Management System
+              </h3>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 space-y-4">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                A full stack web application engineered to streamline business inventory management with automated product lifecycle tracking.
+              </p>
+              
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Product cataloging: Intuitive interface for adding, tracking, and updating products in real-time.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                  <span>Low-stock automated alerts triggering warnings when quantities reach critical reorder levels.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+                  <span>Proactive expiry date notification engine to prevent perishable and expiring stock waste.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card Footer -->
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-blue-300">Java</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Spring Boot</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">REST API</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">MySQL</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300">HTML/CSS/JS</span>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://github.com/Kritisharma26" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View on GitHub</span>
+              </a>
+              <span class="text-[11px] text-slate-400 font-mono">v1.2 Production</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Employee Management System -->
+        <div class="project-card flex flex-col justify-between glass-panel rounded-2xl border border-slate-800 overflow-hidden hover-lift" data-category="all j2ee">
+          <div>
+            <!-- Banner / Header -->
+            <div class="p-6 bg-gradient-to-br from-emerald-900/30 to-slate-900 border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                  Enterprise J2EE
+                </span>
+                <span class="text-xs text-slate-400 flex items-center space-x-1 font-mono">
+                  <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-400"></i>
+                  <span>DAO / DTO</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                Employee Management System
+              </h3>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 space-y-4">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                An enterprise-style J2EE web application engineered with strict design pattern enforcement to manage personnel records securely.
+              </p>
+              
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Implemented Data Access Object (DAO) and Data Transfer Object (DTO) patterns for complete persistence layer decoupling.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="database" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                  <span>Robust CRUD capabilities: Adding, updating, querying, and viewing employee information with relational integrity.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="shield" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>PreparedStatements & SQL injection prevention with streamlined transaction safety.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card Footer -->
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-blue-300">Java</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">J2EE</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">DAO Pattern</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">DTO Pattern</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-cyan-300">MySQL</span>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <a href="https://github.com/Kritisharma26" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View on GitHub</span>
+              </a>
+              <span class="text-[11px] text-slate-400 font-mono">Architecture Demo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Freelance Software Solution -->
+        <div class="project-card flex flex-col justify-between glass-panel rounded-2xl border border-slate-800 overflow-hidden hover-lift" data-category="all freelance fullstack">
+          <div>
+            <!-- Banner / Header -->
+            <div class="p-6 bg-gradient-to-br from-purple-900/30 to-slate-900 border-b border-slate-800/80">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-purple-500/10 text-purple-400 border border-purple-500/30">
+                  Client Delivery
+                </span>
+                <span class="text-xs text-slate-400 flex items-center space-x-1 font-mono">
+                  <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span>End-to-End</span>
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                Independent Freelance Software Solution
+              </h3>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 space-y-4">
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                An independently delivered custom software product executed from requirement discovery to architecture, coding, quality assurance, and handoff.
+              </p>
+              
+              <ul class="text-xs text-slate-400 space-y-2">
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <span>Direct client requirement gathering, translating business objectives into technical architecture.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="sliders" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                  <span>Modular full-stack development with rigorous unit and integration testing.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <i data-lucide="trending-up" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                  <span>Timely delivery adhering to client specifications and seamless deployment support.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Card Footer -->
+          <div class="p-6 pt-0">
+            <div class="flex flex-wrap gap-1.5 mb-5 text-[11px] font-mono">
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-purple-300">Client SDLC</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-blue-300">Full Stack</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-300">Quality Assurance</span>
+              <span class="px-2 py-0.5 rounded bg-slate-800 text-amber-300">Deployment</span>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+              <span class="inline-flex items-center space-x-1.5 text-xs font-semibold text-purple-400">
+                <i data-lucide="check" class="w-4 h-4"></i>
+                <span>Delivered Successfully</span>
+              </span>
+              <span class="text-[11px] text-slate-400 font-mono">Independent</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== EDUCATION, CERTIFICATIONS & ACHIEVEMENTS ==================== -->
+    <section id="education" class="py-20 bg-slate-900/40 border-y border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase">Credentials & Academic Journey</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Education & Certifications</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Left Column: Education -->
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-blue-400"></i>
+              <span>Formal Education</span>
+            </h3>
+
+            <!-- B.Tech Card -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                  Aug 2022 – Jun 2026
+                </span>
+                <span class="text-xs font-bold font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
+                  CGPA: 8.03 / 10
+                </span>
+              </div>
+              <h4 class="text-lg font-bold text-white">Bachelor of Technology</h4>
+              <p class="text-sm text-blue-400 font-medium">Computer Science and Engineering</p>
+              <p class="text-xs text-slate-400 mt-2">Shri Vaishnav Vidyapeeth Vishwavidyalaya, Indore, MP</p>
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs text-slate-300">
+                Maintained a strong cumulative GPA across 8 rigorous semesters while taking up industry software engineering commitments and practical training.
+              </div>
+            </div>
+
+            <!-- Class XII Card -->
+            <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover-lift">
+              <div class="flex items-center justify-between mb-2">
+                <span class="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-300">
+                  Passed in 2022
+                </span>
+                <span class="text-xs font-bold font-mono text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded">
+                  87.4%
+                </span>
+              </div>
+              <h4 class="text-base font-bold text-white">Class XII, CBSE</h4>
+              <p class="text-xs text-slate-400">Aditya Birla Higher Secondary School, Nagda, MP</p>
+            </div>
+
+            <!-- Key Achievements Card -->
+            <div class="glass-panel p-6 rounded-2xl border border-emerald-500/30 bg-emerald-950/10">
+              <h4 class="text-base font-bold text-emerald-400 flex items-center space-x-2 mb-3">
+                <i data-lucide="award" class="w-5 h-5"></i>
+                <span>Key Achievements</span>
+              </h4>
+              <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Independent Project Delivery:</strong> Delivered a freelance software project independently, managing client requirements, development, and testing end-to-end.</span>
+                </li>
+                <li class="flex items-start space-x-2">
+                  <span class="text-emerald-400 font-bold">✓</span>
+                  <span><strong>Consistent Academic & Industry Balance:</strong> Maintained a high CGPA of 8.03/10 across 8 semesters alongside intense internships and an industry developer role.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Certifications Grid -->
+          <div class="lg:col-span-7 space-y-6">
+            <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+              <span>Professional & Academic Certifications</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <!-- Cert 1 -->
+              <div class="glass-panel p-5 rounded-xl border border-slate-800 hover-lift flex flex-col justify-between">
+                <div>
+                  <div class="w-9 h-9 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center mb-3 border border-red-500/20">
+                    <i data-lucide="terminal" class="w-5 h-5"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-sm">Java Programming</h4>
+                  <p class="text-xs text-slate-400 mt-1">Udemy</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-slate-800/80 text-[11px] font-mono text-blue-400">
+                  Object-Oriented & Core Java
+                </div>
+              </div>
+
+              <!-- Cert 2 -->
+              <div class="glass-panel p-5 rounded-xl border border-slate-800 hover-lift flex flex-col justify-between">
+                <div>
+                  <div class="w-9 h-9 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center mb-3 border border-blue-500/20">
+                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-sm">Software Engineering</h4>
+                  <p class="text-xs text-slate-400 mt-1">NPTEL</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-slate-800/80 text-[11px] font-mono text-emerald-400">
+                  SDLC, Agile & Design Patterns
+                </div>
+              </div>
+
+              <!-- Cert 3 -->
+              <div class="glass-panel p-5 rounded-xl border border-slate-800 hover-lift flex flex-col justify-between">
+                <div>
+                  <div class="w-9 h-9 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3 border border-emerald-500/20">
+                    <i data-lucide="network" class="w-5 h-5"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-sm">Computer Networks & IP</h4>
+                  <p class="text-xs text-slate-400 mt-1">NPTEL</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-slate-800/80 text-[11px] font-mono text-purple-400">
+                  TCP/IP, Sockets & Protocols
+                </div>
+              </div>
+
+              <!-- Cert 4 -->
+              <div class="glass-panel p-5 rounded-xl border border-slate-800 hover-lift flex flex-col justify-between">
+                <div>
+                  <div class="w-9 h-9 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center mb-3 border border-purple-500/20">
+                    <i data-lucide="image" class="w-5 h-5"></i>
+                  </div>
+                  <h4 class="font-bold text-white text-sm">Computer Graphics</h4>
+                  <p class="text-xs text-slate-400 mt-1">NPTEL</p>
+                </div>
+                <div class="mt-4 pt-2 border-t border-slate-800/80 text-[11px] font-mono text-cyan-400">
+                  Visual Computing & Rendering
+                </div>
+              </div>
+
+              <!-- Cert 5 -->
+              <div class="glass-panel p-5 rounded-xl border border-slate-800 hover-lift flex flex-col justify-between sm:col-span-2">
+                <div class="flex items-center space-x-3">
+                  <div class="w-9 h-9 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-white text-sm">Soft Skills & Communication</h4>
+                    <p class="text-xs text-slate-400">GeeksforGeeks</p>
+                  </div>
+                </div>
+                <div class="mt-4 pt-2 border-t border-slate-800/80 text-[11px] font-mono text-amber-400">
+                  Cross-team Collaboration, Client Management & Professional Communication
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase">Get In Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Let's Connect & Collaborate</h2>
+        <p class="text-slate-400 text-sm mt-2">Currently open to software engineering discussions, backend projects, and opportunities</p>
+        <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Left: Quick Direct Contact Info & 1-Click Copy -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 space-y-6">
+            <h3 class="text-xl font-bold text-white">Direct Contacts</h3>
+            
+            <!-- Email Item -->
+            <div class="flex items-start justify-between group p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3 overflow-hidden">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-xs text-slate-400">Email Address</div>
+                  <a href="mailto:kritisharma25704@gmail.com" class="text-xs sm:text-sm font-semibold text-white hover:text-blue-400 truncate block">
+                    kritisharma25704@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button onclick="copyToClipboard('kritisharma25704@gmail.com', 'Email')" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" title="Copy Email">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Phone Item -->
+            <div class="flex items-start justify-between group p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Phone Number</div>
+                  <a href="tel:+917805868677" class="text-xs sm:text-sm font-semibold text-white hover:text-emerald-400">
+                    +91 78058 68677
+                  </a>
+                </div>
+              </div>
+              <button onclick="copyToClipboard('+91 78058 68677', 'Phone Number')" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors" title="Copy Phone">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Location Item -->
+            <div class="flex items-center space-x-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Current Location</div>
+                <div class="text-xs sm:text-sm font-semibold text-white">Bengaluru, Karnataka, India</div>
+              </div>
+            </div>
+
+            <!-- GitHub & LinkedIn Links -->
+            <div class="pt-4 border-t border-slate-800 flex items-center gap-4">
+              <a href="https://github.com/Kritisharma26" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center justify-center space-x-2 transition-colors border border-slate-700">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub Profile</span>
+              </a>
+              <a href="https://www.linkedin.com/in/kriti-sharma" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 px-4 rounded-xl bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white text-xs font-semibold flex items-center justify-center space-x-2 transition-all border border-blue-500/30">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Printable Resume Quick Box -->
+          <div class="glass-panel p-6 rounded-2xl border border-blue-500/30 bg-blue-950/10 flex items-center justify-between">
+            <div class="space-y-1">
+              <div class="text-sm font-bold text-white">Looking for the formal resume?</div>
+              <div class="text-xs text-slate-400">View or print high-fidelity PDF format</div>
+            </div>
+            <a href="resume.html" target="_blank" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold flex items-center space-x-1.5 transition-colors shadow-md">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Open Resume</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl">
+            <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+            <p class="text-xs text-slate-400 mb-6">Have a project or opportunity? Send a note directly below.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="sender-name" class="block text-xs font-medium text-slate-300 mb-1.5">Your Name</label>
+                  <input type="text" id="sender-name" required placeholder="John Doe" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                </div>
+                <div>
+                  <label for="sender-email" class="block text-xs font-medium text-slate-300 mb-1.5">Your Email</label>
+                  <input type="email" id="sender-email" required placeholder="john@example.com" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label for="sender-subject" class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
+                <input type="text" id="sender-subject" required placeholder="Full Stack Java Opportunity / Project Discussion" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+              </div>
+
+              <div>
+                <label for="sender-message" class="block text-xs font-medium text-slate-300 mb-1.5">Message</label>
+                <textarea id="sender-message" rows="4" required placeholder="Hi Kriti, I came across your portfolio and would love to connect regarding..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center space-x-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-10 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center space-x-2">
+        <span class="font-mono font-bold text-slate-200">&lt;KS/&gt; Kriti Sharma</span>
+        <span>•</span>
+        <span>Full Stack Java Developer</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#hero" class="hover:text-white transition-colors">Back to top</a>
+        <span>•</span>
+        <a href="https://github.com/Kritisharma26" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+        <span>•</span>
+        <a href="resume.html" target="_blank" class="hover:text-white transition-colors">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back-to-Top Button -->
+  <button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 p-3 rounded-xl bg-blue-600 text-white shadow-xl opacity-0 pointer-events-none transition-all duration-300 hover:bg-blue-500 z-50">
+    <i data-lucide="arrow-up" class="w-5 h-5"></i>
+  </button>
+
+  <!-- Lucide script initialization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>

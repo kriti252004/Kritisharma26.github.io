@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kriti Sharma - Resume</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      background-color: #f8fafc;
+    }
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-shadow-none {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      @page {
+        margin: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body class="py-8 px-4 sm:px-6">
+
+  <!-- Print & Navigation Controls -->
+  <div class="max-w-4xl mx-auto mb-6 flex items-center justify-between no-print">
+    <a href="index.html" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-600 hover:text-blue-800">
+      <span>← Back to Portfolio</span>
+    </a>
+    <button onclick="window.print()" class="px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm shadow-md transition-colors flex items-center space-x-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+      </svg>
+      <span>Print / Save as PDF</span>
+    </button>
+  </div>
+
+  <!-- Main Resume Sheet -->
+  <main class="max-w-4xl mx-auto bg-white p-8 sm:p-12 rounded-xl shadow-lg border border-slate-200 print-shadow-none">
+    
+    <!-- Header -->
+    <header class="text-center border-b border-slate-300 pb-5 mb-5">
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 uppercase">Kriti Sharma</h1>
+      <div class="flex flex-wrap items-center justify-center gap-2 text-xs text-slate-600 mt-2 font-medium">
+        <a href="tel:+917805868677" class="hover:text-blue-600">+91 78058 68677</a>
+        <span>|</span>
+        <a href="mailto:kritisharma25704@gmail.com" class="hover:text-blue-600">kritisharma25704@gmail.com</a>
+        <span>|</span>
+        <a href="https://www.linkedin.com/in/kriti-sharma" target="_blank" class="hover:text-blue-600 text-blue-600 font-semibold">LinkedIn</a>
+        <span>|</span>
+        <a href="https://github.com/Kritisharma26" target="_blank" class="hover:text-blue-600 text-blue-600 font-semibold">github.com/Kritisharma26</a>
+      </div>
+    </header>
+
+    <!-- Summary -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Summary</h2>
+      <p class="text-xs text-slate-700 leading-relaxed text-justify">
+        Full Stack Java Developer with hands-on experience across the SDLC — from designing REST APIs and data models to debugging production issues on a live healthcare application. Strong foundation in Java, Spring Boot, J2EE, and MySQL, with practical exposure to OOP design patterns (DAO/DTO) through independently delivered client and academic projects. Currently contributing to billing-team data modelling and production support at UBQ Technology.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Technical Skills</h2>
+      <div class="text-xs text-slate-700 space-y-1">
+        <div><strong>Languages:</strong> Java, SQL, HTML, CSS, JavaScript, Core Spring</div>
+        <div><strong>Frameworks & Technologies:</strong> Spring Boot, Hibernate, REST API, React, J2EE</div>
+        <div><strong>Databases:</strong> MySQL</div>
+        <div><strong>Core Concepts:</strong> Object-Oriented Programming (OOP), Data Structures and Algorithms, Data Modelling, DAO Pattern, DTO Pattern</div>
+        <div><strong>Tools & Editors:</strong> VS Code, Eclipse, Git, GitHub</div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Education</h2>
+      <div class="space-y-3">
+        <div>
+          <div class="flex items-center justify-between text-xs">
+            <strong class="text-slate-900">Bachelor of Technology in Computer Science and Engineering</strong>
+            <span class="text-slate-600 font-medium">Aug 2022 – Jun 2026</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-600 italic">
+            <span>Shri Vaishnav Vidyapeeth Vishwavidyalaya</span>
+            <span>Indore, MP</span>
+          </div>
+          <div class="text-xs text-slate-700 font-medium mt-0.5">CGPA: 8.03/10</div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between text-xs">
+            <strong class="text-slate-900">Class XII, CBSE</strong>
+            <span class="text-slate-600 font-medium">2022</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-600 italic">
+            <span>Aditya Birla Higher Secondary School</span>
+            <span>Nagda, MP</span>
+          </div>
+          <div class="text-xs text-slate-700 font-medium mt-0.5">Percentage: 87.4%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Experience</h2>
+      <div class="space-y-4">
+        
+        <div>
+          <div class="flex items-center justify-between text-xs">
+            <strong class="text-slate-900">Software Developer</strong>
+            <span class="text-slate-600 font-medium">Jul 2026 – Present</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-600 italic mb-1.5">
+            <span>UBQ Technology Pvt Ltd</span>
+            <span>Bengaluru, KA</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
+            <li>Working on Medics, a healthcare application, contributing to backend feature development and enhancements.</li>
+            <li>Part of the billing team; performed data modelling to design and structure billing-related data for accuracy and scalability.</li>
+            <li>Provided production support by investigating, troubleshooting, and resolving bugs across the application.</li>
+            <li>Collaborated with cross-functional teams to ensure timely delivery and stability of releases.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between text-xs">
+            <strong class="text-slate-900">Java Full Stack Developer Trainee</strong>
+            <span class="text-slate-600 font-medium">Jan 2025 – Jun 2026</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-600 italic mb-1.5">
+            <span>Dhee Coding Labs</span>
+            <span>Bengaluru, KA</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
+            <li>Underwent intensive training in Java Full Stack development, focusing on Spring Boot, Hibernate, and MySQL database management.</li>
+            <li>Built frontend interfaces using HTML, CSS, and JavaScript integrated with Spring Boot backends.</li>
+            <li>Managed source code and collaborated on projects using Git and GitHub for version control.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Projects</h2>
+      <div class="space-y-3">
+        
+        <div>
+          <div class="text-xs">
+            <strong class="text-slate-900">Smart Inventory Management System</strong> | 
+            <span class="italic text-slate-600">Java, Spring Boot, REST API, HTML, CSS, JavaScript, MySQL</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-0.5 mt-1">
+            <li>A full stack web application to manage business inventory.</li>
+            <li>Users can add and track products in the system.</li>
+            <li>Includes low-stock alerts and expiry alerts for products.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-xs">
+            <strong class="text-slate-900">Employee Management System</strong> | 
+            <span class="italic text-slate-600">Java, J2EE, DAO, DTO, MySQL</span>
+          </div>
+          <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-0.5 mt-1">
+            <li>A J2EE based application to manage employee records and details.</li>
+            <li>Implemented DAO and DTO design patterns to structure the data access layer.</li>
+            <li>Supports adding, updating, and viewing employee information.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="mb-5">
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Certifications</h2>
+      <div class="text-xs text-slate-700">
+        Java Programming – Udemy • Software Engineering – NPTEL • Computer Networks and Internet Protocol – NPTEL • Computer Graphics – NPTEL • Soft Skills – GeeksforGeeks
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section>
+      <h2 class="text-xs font-bold tracking-wider text-slate-900 uppercase border-b border-slate-300 pb-1 mb-2">Achievements</h2>
+      <ul class="list-disc list-outside ml-4 text-xs text-slate-700 space-y-1">
+        <li>Delivered a freelance software project independently, managing client requirements, development, and testing end-to-end.</li>
+        <li>Maintained a CGPA of 8.03/10 across 8 semesters alongside internships and an industry role.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
